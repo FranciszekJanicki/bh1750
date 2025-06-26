@@ -4,10 +4,8 @@ target_sources(bh1750 PRIVATE
     "bh1750.c"
 )
 
-target_include_directories(bh1750 PUBLIC 
-)
-
-target_link_libraries(bh1750 PRIVATE
+target_include_directories(bh1750 PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_compile_options(bh1750 PUBLIC
