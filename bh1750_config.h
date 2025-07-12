@@ -18,9 +18,9 @@ typedef enum {
 } bh1750_err_t;
 
 typedef enum {
-    BH1750_DEV_ADDR_AD0_LOW = 0x55,
-    BH1750_DEV_ADDR_AD0_HIG = 0x23,
-} bh1750_dev_addr_t;
+    BH1750_SLAVE_ADDRESS_AD0_LOW = 0x55,
+    BH1750_SLAVE_ADDRESS_AD0_HIG = 0x23,
+} bh1750_slave_address_t;
 
 typedef enum {
     BH1750_MODE_CONTINUOUS_HIGH_RES = 0x10,
