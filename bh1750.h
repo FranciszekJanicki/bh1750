@@ -14,7 +14,8 @@ bh1750_err_t bh1750_initialize(bh1750_t* bh1750,
                                bh1750_interface_t const* interface);
 bh1750_err_t bh1750_deinitialize(bh1750_t* bh1750);
 
-bh1750_err_t bh1750_get_light_data_scaled(bh1750_t const* bh1750, float32_t* scaled);
+bh1750_err_t bh1750_get_light_data_scaled(bh1750_t const* bh1750,
+                                          float32_t* scaled);
 bh1750_err_t bh1750_get_light_data_raw(bh1750_t const* bh1750, uint16_t* raw);
 
 bh1750_err_t bh1750_get_device_id(bh1750_t const* bh1750, uint8_t* id);

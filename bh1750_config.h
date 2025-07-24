@@ -46,22 +46,26 @@ typedef struct {
 
 inline float32_t bh1750_mode_to_resolution(bh1750_mode_t mode)
 {
-    if (mode == BH1750_MODE_CONTINUOUS_HIGH_RES || mode == BH1750_MODE_ONETIME_HIGH_RES) {
+    if (mode == BH1750_MODE_CONTINUOUS_HIGH_RES ||
+        mode == BH1750_MODE_ONETIME_HIGH_RES) {
         return 1.0F;
     } else if (mode == BH1750_MODE_CONTINUOUS_HIGH_RES_2 ||
                mode == BH1750_MODE_ONETIME_HIGH_RES_2) {
         return 0.5F;
-    } else if (mode == BH1750_MODE_CONTINUOUS_LOW_RES || mode == BH1750_MODE_ONETIME_LOW_RES) {
+    } else if (mode == BH1750_MODE_CONTINUOUS_LOW_RES ||
+               mode == BH1750_MODE_ONETIME_LOW_RES) {
         return 4.0F;
     }
 
     return 0.0F;
 }
 
-inline float32_t bh1750_raw_to_scaled(uint16_t raw, bh1750_mode_t mode, uint8_t mtreg)
+inline float32_t bh1750_raw_to_scaled(uint16_t raw,
+                                      bh1750_mode_t mode,
+                                      uint8_t mtreg)
 {
-    return (float32_t)raw * (1.0F / BH1750_MEASUREMENT_ACCURACY) * (BH1750_MTREG_DEFAULT / mtreg) *
-           bh1750_mode_to_resolution(mode);
+    return (float32_t)raw * (1.0F / BH1750_MEASUREMENT_ACCURACY) *
+           (BH1750_MTREG_DEFAULT / mtreg) * bh1750_mode_to_resolution(mode);
 }
 
 #endif // BH1750_BH1750_CONFIG_H
