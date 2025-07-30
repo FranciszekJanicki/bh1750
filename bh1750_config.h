@@ -4,6 +4,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define BH1750_MTREG_MIN 0x1F
 #define BH1750_MTREG_DEFAULT 0x45
 #define BH1750_MTREG_MAX 0xFE
@@ -67,5 +71,9 @@ inline float32_t bh1750_raw_to_scaled(uint16_t raw,
     return (float32_t)raw * (1.0F / BH1750_MEASUREMENT_ACCURACY) *
            (BH1750_MTREG_DEFAULT / mtreg) * bh1750_mode_to_resolution(mode);
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // BH1750_BH1750_CONFIG_H

@@ -4,6 +4,10 @@
 #include "bh1750_commands.h"
 #include "bh1750_config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     bh1750_config_t config;
     bh1750_interface_t interface;
@@ -27,5 +31,9 @@ bh1750_err_t bh1750_send_reset_cmd(bh1750_t const* bh1750);
 bh1750_err_t bh1750_set_mtreg(bh1750_t const* bh1750, uint8_t reg);
 bh1750_err_t bh1750_set_mode(bh1750_t const* bh1750, bh1750_mode_t mode);
 bh1750_err_t bh1750_set_power_state(bh1750_t const* bh1750, bh1750_cmd_t cmd);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // BH1750_BH1750_H
